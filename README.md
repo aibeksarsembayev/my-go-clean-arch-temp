@@ -1,0 +1,3 @@
+# my golang clean architecture template
+
+## details is in progress ...
