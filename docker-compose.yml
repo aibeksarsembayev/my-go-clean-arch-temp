@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3.7'
 services:
   # app:
   #   container_name: golang_container
@@ -38,7 +38,7 @@ services:
     volumes:
     - ./pg_data:/var/lib/postgresql/data
     # copy the sql script to create tables
-    - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - learning
 
