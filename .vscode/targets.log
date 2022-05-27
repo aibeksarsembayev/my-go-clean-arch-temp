@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 12:54:35 2022
+# Make data base, printed on Fri May 27 14:09:25 2022
 
 # Variables
 
@@ -163,7 +163,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5210b95a-6150-4168-98d3-4b2c02028a63.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3c55260c-42bb-414f-9f10-6e889ce71216.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -243,9 +243,9 @@ VSCODE_PID = 703810
 
 # Directories
 
-# . (device 62, inode 39342): 11 files, no impossibilities.
+# . (device 62, inode 39342): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,13 +281,13 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 128 B / avg = 8 B
-# current buf: size = 8162 B / used = 128 B / count = 16 / avg = 8 B
- 
+# strcache buffers: 1 (0) / strings = 17 / storage = 144 B / avg = 8 B
+# current buf: size = 8162 B / used = 144 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 20 / hit rate = 20%
+# strcache performance: lookups = 21 / hit rate = 19%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Fri May 27 12:54:35 2022
+ 
+# Load=17/8192=0%, Rehash=0, Collisions=1/21=5%
+# Finished Make data base on Fri May 27 14:09:25 2022
 
  
