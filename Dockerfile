@@ -10,7 +10,7 @@ RUN go get -d -v ./...
 # Install the package
 RUN go install -v ./...
 
-RUN go build -o build ./cmd
+RUN go build -o /build ./cmd
 
 # Expose port 8080 to the outside world
 EXPOSE 8080

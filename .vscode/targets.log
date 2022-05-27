@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri May 27 14:09:25 2022
+# Make data base, printed on Fri May 27 15:58:15 2022
 
 # Variables
 
@@ -49,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /home/student/Applications/VSCode/usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:1817953
+JOURNAL_STREAM = 8:2317689
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -73,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 655544
+MANAGERPID = 753101
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -91,7 +89,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/ALEM-316eca:@/tmp/.ICE-unix/655763,unix/ALEM-316eca:/tmp/.ICE-unix/655763
+SESSION_MANAGER = local/ALEM-316eca:@/tmp/.ICE-unix/753317,unix/ALEM-316eca:/tmp/.ICE-unix/753317
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,7 +101,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 73e1b8674e144bd6b1d5b32b40ddff34
+INVOCATION_ID = 7b06adb986d54545acd6049dfd3f84d6
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -113,7 +111,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 703810
+GIO_LAUNCHED_DESKTOP_FILE_PID = 753643
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +123,7 @@ PWD = /home/student/Documents/github/my-go-clean-arch-temp
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 655725
+SSH_AGENT_PID = 753279
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -163,7 +161,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3c55260c-42bb-414f-9f10-6e889ce71216.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-833a3156-a979-4689-9a88-3310d8dcdd56.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -233,7 +231,7 @@ LC_ADDRESS = kk_KZ.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 703810
+VSCODE_PID = 753643
 # variable set hash-table stats:
 # Load=111/1024=11%, Rehash=0, Collisions=19/135=14%
 
@@ -243,9 +241,9 @@ VSCODE_PID = 703810
 
 # Directories
 
-# . (device 62, inode 39342): 12 files, no impossibilities.
+# . (device 62, inode 94): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -281,13 +279,15 @@ Makefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 144 B / avg = 8 B
-# current buf: size = 8162 B / used = 144 B / count = 17 / avg = 8 B
-
-# strcache performance: lookups = 21 / hit rate = 19%
-# hash-table stats:
+# strcache buffers: 1 (0) / strings = 18 / storage = 149 B / avg = 8 B
+# current buf: size = 8162 B / used = 149 B / count = 18 / avg = 8 B
  
-# Load=17/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Fri May 27 14:09:25 2022
+make: *** No rule to make target 'all'.  Stop.
+
+
+# strcache performance: lookups = 22 / hit rate = 18%
+# hash-table stats:
+# Load=18/8192=0%, Rehash=0, Collisions=1/22=5%
+# Finished Make data base on Fri May 27 15:58:15 2022
 
  
