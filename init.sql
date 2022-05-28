@@ -31,20 +31,20 @@ CREATE TABLE IF NOT EXISTS "comment" (
 	"updated" TIMESTAMP NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS "post_vote" {
+CREATE TABLE IF NOT EXISTS "post_vote" (
     "id" SERIAL NOT NULL UNIQUE PRIMARY KEY,
     "value" BOOLEAN NOT NULL,
     "user_id" SERIAL NOT NULL REFERENCES "user" ("id") ON DELETE CASCADE,
     "post_id" SERIAL NOT NULL REFERENCES "post" ("id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,
 	"updated" TIMESTAMP NOT NULL
-};
+);
 
-CREATE TABLE IF NOT EXISTS "comment_vote" {
+CREATE TABLE IF NOT EXISTS "comment_vote" (
     "id" SERIAL NOT NULL UNIQUE PRIMARY KEY,
     "value" BOOLEAN NOT NULL,
     "user_id" SERIAL NOT NULL REFERENCES "user" ("id") ON DELETE CASCADE,    
     "comment_id" SERIAL NOT NULL REFERENCES "comment" ("id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,
 	"updated" TIMESTAMP NOT NULL
-};
+);
