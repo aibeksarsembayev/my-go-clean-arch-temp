@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS "post_vote" {
     "post_id" SERIAL NOT NULL REFERENCES "post" ("id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,
 	"updated" TIMESTAMP NOT NULL
-}
+};
 
 CREATE TABLE IF NOT EXISTS "comment_vote" {
     "id" SERIAL NOT NULL UNIQUE PRIMARY KEY,
@@ -47,4 +47,4 @@ CREATE TABLE IF NOT EXISTS "comment_vote" {
     "comment_id" SERIAL NOT NULL REFERENCES "comment" ("id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,
 	"updated" TIMESTAMP NOT NULL
-}
+};
