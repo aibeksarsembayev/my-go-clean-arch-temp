@@ -1,0 +1,7 @@
+package postgres
+
+
+
+func NewPostgresRepository() {
+
+}

@@ -4,7 +4,7 @@ import "time"
 
 // Post ...
 type Post struct {
-	ID        int       `json:"id"`
+	ID        int       `json:"id" gorm:"primary key"`
 	Title     string    `json:"title"`
 	Content   string    `json:"content"`
 	User      User      `json:"user"`
