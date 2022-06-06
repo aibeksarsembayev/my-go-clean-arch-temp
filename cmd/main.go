@@ -9,7 +9,9 @@ import (
 	"github.com/jackc/pgx/v4/log/logrusadapter"
 	_ "github.com/jackc/pgx/v4/pgxpool"
 	"github.com/quazar2000/my-go-clean-arch-temp/config"
+	"github.com/quazar2000/my-go-clean-arch-temp/repository"
 	postgresql "github.com/quazar2000/my-go-clean-arch-temp/repository/postgres"
+	"github.com/quazar2000/my-go-clean-arch-temp/usecase"
 	"github.com/sirupsen/logrus"
 )
 
@@ -41,6 +43,15 @@ func main() {
 	route.GET("/ping", func(context *gin.Context) {
 		context.JSON(200, gin.H{"message": "pong"})
 	})
+
+	// repositories ...
+	postRepository := repository.NewPostgresPostRepository(db)
+
+	// usecases ...
+	postUsecase := usecase.NewPostUsecase(postRepository)
+
+	// delivery ...
+	
 
 	route.Run() // listen and serve on 0.0.0.0:8080
 }

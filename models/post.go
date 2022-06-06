@@ -40,7 +40,12 @@ type PostResponceDTO struct {
 }
 
 // PostUsecase represents posts's usecases
-type PostUsecase struct {
+type PostUsecase interface {
+	Create(ctx context.Context, post *Post) (id int, err error)
+	Update(ctx context.Context, post *Post) (err error)
+	GetAll(ctx context.Context, post *Post) (posts *[]PostRequestDTO, err error)
+	GetByID(ctx context.Context, id int) (post *PostRequestDTO, err error)
+	Delete(ctx context.Context, id int) (err error)
 }
 
 // PostRepository represent post's repository contact
