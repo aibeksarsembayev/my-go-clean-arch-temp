@@ -18,10 +18,10 @@ func NewPostHandler(g *gin.Engine, us models.PostUsecase) {
 		PUsecase: us,
 	}
 	g.GET("/post", handler.GetAll)
-	g.GET("/post/:id", handler.GetByID)
-	g.POST("/post", handler.Create)
-	g.POST("/post/:id:", handler.Update)
-	g.DELETE("/post/:id", handler.Delete)
+	// g.GET("/post/:id", handler.GetByID)
+	// g.POST("/post", handler.Create)
+	// g.POST("/post/:id:", handler.Update)
+	// g.DELETE("/post/:id", handler.Delete)
 
 }
 

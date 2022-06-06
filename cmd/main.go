@@ -9,6 +9,7 @@ import (
 	"github.com/jackc/pgx/v4/log/logrusadapter"
 	_ "github.com/jackc/pgx/v4/pgxpool"
 	"github.com/quazar2000/my-go-clean-arch-temp/config"
+	delivery "github.com/quazar2000/my-go-clean-arch-temp/delivery/http"
 	"github.com/quazar2000/my-go-clean-arch-temp/repository"
 	postgresql "github.com/quazar2000/my-go-clean-arch-temp/repository/postgres"
 	"github.com/quazar2000/my-go-clean-arch-temp/usecase"
@@ -51,7 +52,7 @@ func main() {
 	postUsecase := usecase.NewPostUsecase(postRepository)
 
 	// delivery ...
-	
+	delivery.NewPostHandler(route, postUsecase)
 
 	route.Run() // listen and serve on 0.0.0.0:8080
 }
