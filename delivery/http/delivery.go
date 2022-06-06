@@ -17,16 +17,25 @@ func NewPostHandler(g *gin.Engine, us models.PostUsecase) {
 	handler := &PostHandler{
 		PUsecase: us,
 	}
-	g.GET("/post", handler.GetAll)
+	// g.GET("/post", handler.GetAll)
 	// g.GET("/post/:id", handler.GetByID)
-	// g.POST("/post", handler.Create)
-	// g.POST("/post/:id:", handler.Update)
+	// g.POST("/post/create", handler.Create)
+	// // g.POST("/post/:id:", handler.Update) // panic: only one wildcard per path segment is allowed, has: ':id:' in path '/post/:id:'
 	// g.DELETE("/post/:id", handler.Delete)
+
+	post := g.Group("/post")
+	{
+		post.GET("/", handler.GetAll)
+		post.GET("/:id", handler.GetByID)
+		post.POST("/create", handler.Create)
+		// post.POST("/:id:", handler.Update)
+		post.DELETE("/:id", handler.Delete)
+	}
 
 }
 
 func (p *PostHandler) Create(c *gin.Context) {
-
+	c.JSON(http.StatusOK, gin.H{"post": "create"})
 }
 
 func (p *PostHandler) GetAll(c *gin.Context) {
@@ -34,10 +43,13 @@ func (p *PostHandler) GetAll(c *gin.Context) {
 }
 
 func (p *PostHandler) GetByID(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"post": "id"})
 }
 
 func (p *PostHandler) Update(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"post": "update"})
 }
 
 func (p *PostHandler) Delete(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"post": "delete"})
 }
