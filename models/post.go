@@ -7,36 +7,36 @@ import (
 
 // Post ...
 type Post struct {
-	PostID    int       `json:"post_id"`
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
-	UserID    int       `json:"user_id"`
-	Category  Category  `json:"category"`
-	UpdatedAt time.Time `json:"updated_at"`
-	CreatedAt time.Time `json:"created_at"`
+	PostID     int       `json:"post_id"`
+	Title      string    `json:"title"`
+	Content    string    `json:"content"`
+	UserID     int       `json:"user_id"`
+	CategoryID int       `json:"category_id"`
+	UpdatedAt  time.Time `json:"updated_at"`
+	CreatedAt  time.Time `json:"created_at"`
 }
 
 // PostRequestDTO ...
 type PostRequestDTO struct {
-	PostID    int       `json:"post_id"`
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
-	UserID    int       `json:"user_id"`
-	Username  string    `json:"username"`
-	Category  Category  `json:"category"`
-	UpdatedAt time.Time `json:"updated_at"`
-	CreatedAt time.Time `json:"created_at"`
+	PostID     int       `json:"post_id"`
+	Title      string    `json:"title"`
+	Content    string    `json:"content"`
+	UserID     int       `json:"user_id"`
+	Username   string    `json:"username"`
+	CategoryID int       `json:"category_id"`
+	UpdatedAt  time.Time `json:"updated_at"`
+	CreatedAt  time.Time `json:"created_at"`
 }
 
 // PostResponceDTO ...
 type PostResponceDTO struct {
-	PostID    int       `json:"post_id"`
-	Title     string    `json:"title"`
-	Content   string    `json:"content"`
-	UserID    int       `json:"user_id"`
-	Category  Category  `json:"category"`
-	UpdatedAt time.Time `json:"updated_at"`
-	CreatedAt time.Time `json:"created_at"`
+	PostID     int       `json:"post_id"`
+	Title      string    `json:"title"`
+	Content    string    `json:"content"`
+	UserID     int       `json:"user_id"`
+	CategoryID int       `json:"category_id"`
+	UpdatedAt  time.Time `json:"updated_at"`
+	CreatedAt  time.Time `json:"created_at"`
 }
 
 // PostUsecase represents posts's usecases
