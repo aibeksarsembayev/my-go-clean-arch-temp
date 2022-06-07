@@ -48,7 +48,7 @@ type PostUsecase interface {
 	Delete(ctx context.Context, id int) (err error)
 }
 
-// PostRepository represent post's repository contact
+// PostRepository represent post's repository contract
 type PostRepository interface {
 	Create(ctx context.Context, post *Post) (id int, err error)
 	Update(ctx context.Context, post *Post) (err error)

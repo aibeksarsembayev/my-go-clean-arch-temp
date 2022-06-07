@@ -11,7 +11,7 @@ type postgresPostRepository struct {
 	Conn *pgxpool.Pool
 }
 
-// NewPostgresPostRepository will create an object that repsenet the post. Repository interface
+// NewPostgresPostRepository will create an object that represent the post. Repository interface
 func NewPostgresPostRepository(Conn *pgxpool.Pool) models.PostRepository {
 	return &postgresPostRepository{
 		Conn: Conn,
