@@ -47,9 +47,11 @@ func main() {
 
 	// repositories ...
 	postRepository := repository.NewPostgresPostRepository(db)
+	userRepository := repository.NewPostgresUserRepository(db)
 
 	// usecases ...
 	postUsecase := usecase.NewPostUsecase(postRepository)
+	userUsecase := usecase.NewUserUsecase(userRepository)
 
 	// delivery ...
 	delivery.NewPostHandler(route, postUsecase)
