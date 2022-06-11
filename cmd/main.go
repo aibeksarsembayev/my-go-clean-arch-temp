@@ -54,7 +54,12 @@ func main() {
 	userUsecase := usecase.NewUserUsecase(userRepository)
 
 	// delivery ...
-	delivery.NewPostHandler(route, postUsecase)
+	handler := &delivery.Handler{
+		PostUsecase: postUsecase,
+		UserUsecase: userUsecase,
+	}
+
+	delivery.NewHandler(route, handler)
 
 	route.Run() // listen and serve on 0.0.0.0:8080
 }
