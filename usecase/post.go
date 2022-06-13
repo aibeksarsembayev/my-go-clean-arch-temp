@@ -2,16 +2,18 @@ package usecase
 
 import (
 	"context"
+	"time"
 
 	"github.com/quazar2000/my-go-clean-arch-temp/models"
 )
 
 type postUsecase struct {
 	postRepository models.PostRepository
+	contextTimeout time.Duration
 }
 
 // NewPostUsecase will create new an post Usecase object representation of models.PostUsecase interface
-func NewPostUsecase(p models.PostRepository) models.PostUsecase {
+func NewPostUsecase(p models.PostRepository, timeout time.Duration) models.PostUsecase {
 	return &postUsecase{
 		postRepository: p,
 	}
@@ -19,6 +21,9 @@ func NewPostUsecase(p models.PostRepository) models.PostUsecase {
 
 // Create post ...
 func (p *postUsecase) Create(ctx context.Context, post *models.Post) (id int, err error) {
+	// ctxt, cancel := context.WithTimeout(ctx, p.contextTimeout)
+	// defer cancel()
+
 	return 0, nil
 }
 

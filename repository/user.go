@@ -19,7 +19,13 @@ func NewPostgresUserRepository(Conn *pgxpool.Pool) models.UserRepository {
 }
 
 // Create user ...
-func (u *postgresUserRepository) Create(ctx context.Context, user *models.User) (id int, err error) {
+func (u *postgresUserRepository) Create(ctx context.Context, user *models.User) (int, error) {
+	stmt := `
+	INSERT INTO user (username, password, email, created_ad)
+	VALUES ($1, $2, $3, $4)
+	returning user_id
+		`
+	var id int = 0
 	return 0, nil
 }
 

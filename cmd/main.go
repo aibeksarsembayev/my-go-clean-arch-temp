@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jackc/pgx/v4"
@@ -53,8 +54,11 @@ func main() {
 	postvoteRepository := repository.NewPostgresPostVoteRepository(db)
 	commentvoteRepository := repository.NewPostgresCommentVoteRepository(db)
 
+	// context timeout setup
+	timeoutContext := time.Duration(conf.Context.Timeout) * time.Second
+
 	// usecases ...
-	postUsecase := usecase.NewPostUsecase(postRepository)
+	postUsecase := usecase.NewPostUsecase(postRepository, timeoutContext)
 	userUsecase := usecase.NewUserUsecase(userRepository)
 	categoryUsecase := usecase.NewCategoryUsecase(categoryRepository)
 	commentUsecase := usecase.NewCommentUsecase(commentRepository)
@@ -63,15 +67,18 @@ func main() {
 
 	// delivery ...
 	handler := &delivery.Handler{
-		PostUsecase:     postUsecase,
-		UserUsecase:     userUsecase,
-		CategoryUsecase: categoryUsecase,
-		CommentUsecase:  commentUsecase,
-		PostVoteUsecase: postvoteUsecase,
+		PostUsecase:        postUsecase,
+		UserUsecase:        userUsecase,
+		CategoryUsecase:    categoryUsecase,
+		CommentUsecase:     commentUsecase,
+		PostVoteUsecase:    postvoteUsecase,
 		CommentVoteUsecase: commentvoteUsecase,
 	}
 
 	delivery.NewHandler(route, handler)
 
-	route.Run() // listen and serve on 0.0.0.0:8080
+	err = route.Run(conf.Server.Address) // listen and serve on 0.0.0.0:9090
+	if err != nil {
+		log.Fatal("cannot start server:", err)
+	}
 }
