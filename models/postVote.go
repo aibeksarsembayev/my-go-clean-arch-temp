@@ -26,7 +26,5 @@ type PostVoteUsecase interface {
 type PostVoteRepository interface {
 	Like(ctx context.Context, postVote *PostVote) (err error)
 	Dislike(ctx context.Context, postVote *PostVote) (err error)
-	Delete(ctx context.Context, id int) (err error)
+	Delete(ctx context.Context, id int) (err error) // need to check !!!
 }
-
-// Delete ?

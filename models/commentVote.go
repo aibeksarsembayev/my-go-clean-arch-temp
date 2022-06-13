@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"context"
+	"time"
+)
 
 // CommentVote ...
 type CommentVote struct {
@@ -10,4 +13,16 @@ type CommentVote struct {
 	CommentID     int       `json:"comment_id"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
+}
+
+// CommentVoteUsecase ...
+type CommentVoteUsecase interface {
+	Like(ctx context.Context, commentVote *CommentVote) (err error)
+	Dislike(ctx context.Context, commentVote *CommentVote) (err error)
+}
+
+// CommentVoteRepository ...
+type CommentVoteRepository interface {
+	Like(ctx context.Context, commentVote *CommentVote) (err error)
+	Dislike(ctx context.Context, commentVote *CommentVote) (err error)
 }

@@ -23,7 +23,7 @@ func (c *categoryUsecase) Create(ctx context.Context, category *models.Category)
 }
 
 // GetAll categories ...
-func (c *categoryUsecase) GetAll(ctx context.Context, category *models.Category) (categories *[]models.CategoryRequestDTO, err error) {
+func (c *categoryUsecase) GetAll(ctx context.Context, category *models.Category) (categories []*models.CategoryRequestDTO, err error) {
 	return nil, nil
 }
 

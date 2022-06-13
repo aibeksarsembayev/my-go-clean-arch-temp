@@ -24,7 +24,7 @@ func (c *postgresCategoryRepository) Create(ctx context.Context, category *model
 }
 
 // GetAll categories ...
-func (c *postgresCategoryRepository) GetAll(ctx context.Context, category *models.Category) (categories *[]models.CategoryRequestDTO, err error) {
+func (c *postgresCategoryRepository) GetAll(ctx context.Context, category *models.Category) (categories []*models.CategoryRequestDTO, err error) {
 	return nil, nil
 }
 
