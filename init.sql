@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS "comment" (
 
 CREATE TABLE IF NOT EXISTS "post_vote" (
     "post_vote_id" SERIAL NOT NULL UNIQUE PRIMARY KEY,
-    "value" BOOLEAN NOT NULL,
+    "post_vote_value" BOOLEAN NOT NULL,
     "user_id" SERIAL NOT NULL REFERENCES "user" ("user_id") ON DELETE CASCADE,
     "post_id" SERIAL NOT NULL REFERENCES "post" ("post_id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS "post_vote" (
 
 CREATE TABLE IF NOT EXISTS "comment_vote" (
     "comment_vote_id" SERIAL NOT NULL UNIQUE PRIMARY KEY,
-    "value" BOOLEAN NOT NULL,
+    "comment_vote_value" BOOLEAN NOT NULL,
     "user_id" SERIAL NOT NULL REFERENCES "user" ("user_id") ON DELETE CASCADE,    
     "comment_id" SERIAL NOT NULL REFERENCES "comment" ("comment_id") ON DELETE CASCADE,
     "created" TIMESTAMP NOT NULL,

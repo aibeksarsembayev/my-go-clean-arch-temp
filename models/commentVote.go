@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-// Post Vote ...
+// CommentVote ...
 type CommentVote struct {
 	CommentVoteID int       `json:"comment_vote_id"`
 	Value         bool      `json:"value"`

@@ -6,22 +6,22 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func (p *Handler) Create(c *gin.Context) {
+func (p *Handler) postCreate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"post": "create"})
 }
 
-func (p *Handler) GetAll(c *gin.Context) {
+func (p *Handler) postGetAll(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"post": "all"})
 }
 
-func (p *Handler) GetByID(c *gin.Context) {
+func (p *Handler) postGetByID(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"post": "id"})
 }
 
-func (p *Handler) Update(c *gin.Context) {
+func (p *Handler) postUpdate(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"post": "update"})
 }
 
-func (p *Handler) Delete(c *gin.Context) {
+func (p *Handler) postDelete(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"post": "delete"})
 }

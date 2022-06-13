@@ -11,26 +11,36 @@ type Handler struct {
 	UserUsecase     models.UserUsecase
 	CategoryUsecase models.CategoryUsecase
 	CommentUsecase  models.CommentUsecase
+	PostVoteUsecase models.PostVoteUsecase
 }
 
 // NewHandler will initialize the resources endpoint
 func NewHandler(g *gin.Engine, handler *Handler) {
 
+	// post endpoints
 	post := g.Group("/post")
 	{
-		post.GET("/", handler.GetAll)
-		post.GET("/:id", handler.GetByID)
-		post.POST("/create", handler.Create)
-		// post.POST("/:id:", handler.Update) // panic: only one wildcard per path segment is allowed, has: ':id:' in path '/post/:id:'
-		post.DELETE("/:id", handler.Delete)
+		post.GET("/", handler.postGetAll)
+		post.GET("/:id", handler.postGetByID)
+		post.POST("/create", handler.postCreate)
+		post.DELETE("/:id", handler.postDelete)
+		// comment
+		post.POST("/comment/create", handler.commentCreate)
 	}
 
+	// postvote endpoints
+	postVote := g.Group("/post/vote")
+	{
+		postVote.POST("/like", handler.like)
+		postVote.POST("/dislike", handler.dislike)
+	}
+
+	// user endpoints
 	user := g.Group("/user")
 	{
 		user.POST("/signup", handler.signup)
 		user.POST("/signin", handler.signin)
 		user.POST("/signout", handler.signout)
-
 	}
 
 }
