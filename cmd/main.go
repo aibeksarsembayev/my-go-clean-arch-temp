@@ -49,17 +49,20 @@ func main() {
 	postRepository := repository.NewPostgresPostRepository(db)
 	userRepository := repository.NewPostgresUserRepository(db)
 	categoryRepository := repository.NewPostgresCategoryRepository(db)
+	commentRepository := repository.NewPostgresCommentRepository(db)
 
 	// usecases ...
 	postUsecase := usecase.NewPostUsecase(postRepository)
 	userUsecase := usecase.NewUserUsecase(userRepository)
 	categoryUsecase := usecase.NewCategoryUsecase(categoryRepository)
+	commentUsecase := usecase.NewCommentUsecase(commentRepository)
 
 	// delivery ...
 	handler := &delivery.Handler{
 		PostUsecase:     postUsecase,
 		UserUsecase:     userUsecase,
 		CategoryUsecase: categoryUsecase,
+		CommentUsecase:  commentUsecase,
 	}
 
 	delivery.NewHandler(route, handler)

@@ -7,9 +7,10 @@ import (
 
 // Handler respoesent the httphandler for post, user
 type Handler struct {
-	PostUsecase models.PostUsecase
-	UserUsecase models.UserUsecase
+	PostUsecase     models.PostUsecase
+	UserUsecase     models.UserUsecase
 	CategoryUsecase models.CategoryUsecase
+	CommentUsecase  models.CommentUsecase
 }
 
 // NewHandler will initialize the resources endpoint
