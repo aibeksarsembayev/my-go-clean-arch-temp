@@ -9,6 +9,7 @@ import (
 type Handler struct {
 	PostUsecase models.PostUsecase
 	UserUsecase models.UserUsecase
+	CategoryUsecase models.CategoryUsecase
 }
 
 // NewHandler will initialize the resources endpoint
