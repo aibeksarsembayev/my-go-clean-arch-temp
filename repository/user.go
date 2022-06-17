@@ -2,6 +2,7 @@ package repository
 
 import (
 	"context"
+	"log"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/quazar2000/my-go-clean-arch-temp/models"
@@ -25,8 +26,17 @@ func (u *postgresUserRepository) Create(ctx context.Context, user *models.User) 
 	VALUES ($1, $2, $3, $4)
 	returning user_id
 		`
-	var id int = 0
-	return 0, nil
+
+	var id int
+	row := u.Conn.QueryRow(ctx, stmt, user.Username, user.Password, user.Email, user.CreatedAt)
+
+	err := row.Scan(&id)
+	if err != nil {
+		log.Errorf("unable to INSERT: %v\n", err)
+		return 0, err
+	}
+
+	return id, nil
 }
 
 // Update user ...

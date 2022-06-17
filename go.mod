@@ -6,6 +6,7 @@ require github.com/gin-gonic/gin v1.7.7
 
 require (
 	github.com/jackc/pgx/v4 v4.16.1
+	github.com/pashagolub/pgxmock v1.6.0
 	github.com/sirupsen/logrus v1.6.0
 	github.com/spf13/viper v1.12.0
 )

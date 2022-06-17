@@ -42,10 +42,6 @@ func main() {
 	// Initialize server
 	route := gin.Default()
 
-	route.GET("/ping", func(context *gin.Context) {
-		context.JSON(200, gin.H{"message": "pong"})
-	})
-
 	// repositories ...
 	postRepository := repository.NewPostgresPostRepository(db)
 	userRepository := repository.NewPostgresUserRepository(db)
