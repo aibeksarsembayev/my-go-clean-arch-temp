@@ -17,10 +17,6 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// func init() {
-// 	config.LoadConfig()
-// }
-
 func main() {
 	// Load config ..
 	conf, err := config.LoadConfig()

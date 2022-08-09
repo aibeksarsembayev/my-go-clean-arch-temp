@@ -2,7 +2,7 @@ package repository
 
 import (
 	"context"
-	"log"
+	"fmt"
 
 	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/quazar2000/my-go-clean-arch-temp/models"
@@ -32,7 +32,7 @@ func (u *postgresUserRepository) Create(ctx context.Context, user *models.User) 
 
 	err := row.Scan(&id)
 	if err != nil {
-		log.Errorf("unable to INSERT: %v\n", err)
+		fmt.Errorf("unable to INSERT: %v\n", err)
 		return 0, err
 	}
 
