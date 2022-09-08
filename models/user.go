@@ -15,14 +15,17 @@ type User struct {
 	UpdatedAt time.Time `json:"updated_at"`
 }
 
-// UserRequestDTO ...
-type UserRequestDTO struct {
-	UserID    int       `json:"user_id"`
+// UserRequestRegisterDTO ...
+type UserRequestRegisterDTO struct {
 	Username  string    `json:"username"`
 	Password  string    `json:"password"`
 	Email     string    `json:"email"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
+}
+
+// UserRequestLoginDTO ...
+type UserRequestLoginDTO struct {
+	Password  string    `json:"password"`
+	Email     string    `json:"email"`
 }
 
 // UserResponceDTO ...

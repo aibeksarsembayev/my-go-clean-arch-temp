@@ -37,6 +37,8 @@ func NewHandler(g *gin.Engine, handler *Handler) {
 	// comment and its vote endpoints
 	postComment := g.Group("/post/comment")
 	{
+		postComment.GET("/create", handler.commentCreate)
+
 		postComment.POST("/create", handler.commentCreate)
 		postComment.POST("/like", handler.commentLike)
 		postComment.POST("/dislike", handler.commentDislike)
@@ -46,8 +48,11 @@ func NewHandler(g *gin.Engine, handler *Handler) {
 	user := g.Group("/user")
 	{
 		user.POST("/signup", handler.signup)
+		user.GET("/signup", handler.signup)
+
+		user.GET("/signin", handler.signin)
 		user.POST("/signin", handler.signin)
-		user.POST("/signout", handler.signout)
+		user.GET("/signout", handler.signout)
 	}
 
 }
